@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <title>Home</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="assets/css/effects.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="assets/js/modernizr-2.6.2.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script> -->
+  <!-- file mandatory for responsive navbar -->
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+  <!-- The nav menu -->
+  <nav class="navbar">
+      <div class="content">
+    <div class="logo">
+      <a href="#"><img src="bvest20.png" style="width:80%", height="auto";></a>
+    </div>
+
+    <ul class="menu-list">
+      <div class="icon cancel-btn">
+        <i class="fa fa-times"></i>
+      </div>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contacts.html">Contact us</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+      <li><a href="contactus.html">Our Team</a></li>
+</ul>
+<div class="icon menu-btn">
+  <i class="fa fa-bars"></i>
+</div>
+</div>
+  </nav>
+  <!-- navbar menu ends here -->
+</head>
+
+
+
+
+
+<!-- Body Started Loader, Bvest White text image etc -->
+<body style="background-color: black;">
+  <div id="loader-wrapper">
+    <div id="loader">
+      <img src="BVEST LOGO WHITE TXT.png" width="100%" height="auto">
+      <div class="sp sp-loadbar"></div>
+      <div id="loader_contentx">
+        <span>Loading Awesomeness...</span>
+      </div>
+    </div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <!--Footer Icons Area started here -->
+  <div id='icons' style="background-color: black;">
+    <a href="https://twitter.com/2020Bvest?s=08" target="_blank" class="icon-button twitter"><i
+        class="fa fa-twitter"></i><span></span></a>
+    <a href="https://www.facebook.com/BVEST-2020-101975681684051/" target="_blank" class="icon-button facebook"><i
+        class="fa fa-facebook"></i><span></span></a>
+    <a href="https://www.instagram.com/invites/contact/?i=f5bpu4118on&utm_content=jsc7koa" target="_blank"
+      class="icon-button instagram"><i class="fa fa-instagram"></i><span></span></a>
+    <a href="https://www.youtube.com/channel/UCxHzcfFAlWVKAaQ0toX2ptA" target="_blank" class="icon-button youtube"><i
+        class="fa fa-youtube"></i><span></span></a>
+    <a href="https://www.linkedin.com/company/bvest-2020" target="_blank" class="icon-button linkedin"><i
+        class="fa fa-linkedin" aria-hidden="true"></i>
+      <span></span></a>
+  </div>
+    <!--Footer Icons Area Ends here -->
+
+
+<!-- Required for loading effects and homepage [Center area] -->
+  <div class="container" style="background-color: black;">
+      </div>
+  </div>
+  <div id="scrolling-wrapper">
+    <div class="card" id="card1">
+      <div class="floatingleft" id="go_right">
+        <a id="right" href="aboutus.html"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+      </div>
+
+      <div class="floating" id="homepage_heading">
+      </div>
+    </div>
+
+  </div>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      function scrollHorizontally(e) {
+        e = window.event || e;
+        // console.log(e);
+        // console.log(Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail))));
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        document.getElementById('scrolling-wrapper').scrollLeft -= (delta * 80); // Multiplied by 40
+        e.preventDefault();
+      }
+      if (document.getElementById('scrolling-wrapper').addEventListener) {
+        // IE9, Chrome, Safari, Opera
+        document.getElementById('scrolling-wrapper').addEventListener("mousewheel", scrollHorizontally, false);
+        // Firefox
+        document.getElementById('scrolling-wrapper').addEventListener("DOMMouseScroll", scrollHorizontally, false);
+      } else {
+        // IE 6/7/8
+        document.getElementById('scrolling-wrapper').attachEvent("onmousewheel", scrollHorizontally);
+      }
+    })();
+  </script>
+
+
+
+  <!-- script for Responsive menu -->
+    <script>
+      const body = document.querySelector("body");
+      const navbar = document.querySelector(".navbar");
+      const menuBtn = document.querySelector(".menu-btn");
+      const cancelBtn = document.querySelector(".cancel-btn");
+      menuBtn.onclick = ()=>{
+        navbar.classList.add("show");
+        menuBtn.classList.add("hide");
+        body.classList.add("disabled");
+      }
+      cancelBtn.onclick = ()=>{
+        body.classList.remove("disabled");
+        navbar.classList.remove("show");
+        menuBtn.classList.remove("hide");
+      }
+      window.onscroll = ()=>{
+        this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+      }
+    </script>
+</body>
+
+</html>
