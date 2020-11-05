@@ -20,7 +20,12 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script> -->
   <!-- file mandatory for responsive navbar -->
   <link rel="stylesheet" href="style.css">
-
+  <style>
+   .tree-grid{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+    }
+  </style>
 
 
 
@@ -41,9 +46,17 @@
               padding-top: 250px;
             }
           </style>
-          <a href="https://greytogreen.in/adopt" target="_blank"><img src="tree2.png" width="60 px" ;>
-            <p>Trees Planted</p>
-            <p class="usersno"></p>
+          <a href="https://greytogreen.in/adopt" target="_blank">
+            <div class="tree-grid">
+            <img src="tree2.png" width="60 px" ;>
+              <div>
+              <p class="usersno"></p>
+            <p>trees</p>
+            <p>Planted</p>
+              </div>
+            
+            </div>
+            
           </a>
         </div>
         <li><a href="index.html">Home</a></li>
