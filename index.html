@@ -42,7 +42,7 @@
             }
           </style>
           <a href="https://greytogreen.in/adopt" target="_blank"><img src="tree1.png" style="width:80%" , height="auto"
-              ,padding-top: "25px" ;></a>
+              ,padding-top: "25px" ;><p>Trees Planted</p><p class="usersno"></p></a>
         </div>
         <li><a href="index.html">Home</a></li>
         <li><a href="aboutus.html">About</a></li>
@@ -112,6 +112,18 @@
   </div>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    const url = "https://api.greytogreen.in/bvest";
+    let users;
+    async function getData() {
+        const response = await fetch(url);
+        const data = await response.json();
+        users = data.bvestUsers;
+        document.querySelector(".usersno").innerHTML = `${users}`
+        }
+
+    getData()
+  </script>
   <script>
     (function () {
       function scrollHorizontally(e) {
